@@ -1,0 +1,27 @@
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, th{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+table{
+  /* border: 2px solid #696969;
+  border-collapse: collapse; */
+  font-size: 18px;
+}
+
+th{
+  width: 20%;
+}
+
+th, td{
+  padding: 10px;
+  border: 2px solid #696969;
+  text-align: center;
+}
+
+#freeSquare{
+  background-color: coral;
+}
