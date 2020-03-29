@@ -2,7 +2,12 @@
     <img src="_images-javascript-exercise-beginners/javascript-logo-4.png" alt="JavaScript logo" title="JavaScript beginners exercises" width="200" />
 </p>
 
-# What is JavaScript?
+JavaScript Essential exercise for Beginners
+=====================
+JavaScript exercise/examples for Beginners
+=====================
+
+## 01. What is JavaScript?
 
 - JavaScript is a programming language that adds interactivity to Web pages
 - JavaScript is a scripting language
@@ -12,7 +17,7 @@
 - JavaScript is `not Java`
 - Due to Java wave or Java popularity and buzz, `LiveScript` renamed to `JavaScript`
 
-# What can JavaScript do?
+## 02. What can JavaScript do?
 
 - Create an active User Interface
 - Control the user experience based on Day, Date, Time and Browser, etc
@@ -20,7 +25,7 @@
 - Create custom HTML pages on the fly/dynamically
 - Control Web browsers interactivity and behaviors
 
-# What can't JavaScript do?
+## 03. What can't JavaScript do?
 
 - JavaScript can't talk to a Database (Its possible with NodeJs)
 - JavaScript can't write to files (Its possible with NodeJs)
