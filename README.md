@@ -34,6 +34,7 @@ JavaScript exercise/examples for Beginners
 Topics include
 =====================
 1. [Example 1 - swapping variables](#example-1-swapping-variables)
+2. [Example 2 - max number](#example-2-max-number)
 
 Example 1 swapping variables
 =====================
@@ -121,5 +122,71 @@ th, td{
 #freeSquare{
   background-color: coral;
 }
+
+```
+
+Example 2 max number
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/2-max-number.png" alt="Max Number" title="Max Number" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2 - Max Number</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `2-max-number.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>max-number</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>2-max-number!</h1>
+
+  <h3>Write a function which returns the maximum of two number</h3>
+  
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('2-max-number');
+
+function findMaxNumber(num1, num2){
+  // 1. long syntax
+  /* if(num1 > num2){
+    return num1
+  } else {
+    return num2
+  } */
+
+  // 2. short syntax
+  /* if(num1 > num2) return num1;
+  else return num2; */
+
+  // 3. ternary short syntax
+  return (num1 > num2) ? num1 : num2;
+}
+
+let checkMax1 = findMaxNumber(10, 5);
+console.log('Max Number:',checkMax1);
+
+let checkMax2 = findMaxNumber(10, 15);
+console.log('Max Number:',checkMax2);
+
+let checkMax3 = findMaxNumber(100, 100);
+console.log('Max Number:',checkMax3);
 
 ```
