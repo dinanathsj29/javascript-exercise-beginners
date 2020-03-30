@@ -35,6 +35,8 @@ Topics include
 =====================
 1. [Example 1 - swapping variables](#example-1-swapping-variables)
 2. [Example 2 - max number](#example-2-max-number)
+3. [Example 3 - Landscape Portrait](#example-3-landscape-portrait)
+
 
 Example 1 swapping variables
 =====================
@@ -188,5 +190,60 @@ console.log('Max Number:',checkMax2);
 
 let checkMax3 = findMaxNumber(100, 100);
 console.log('Max Number:',checkMax3);
+
+```
+
+Example 3 Landscape Portrait
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/3-landscape-portrait.png" alt="Landscape Portrait" title="Landscape Portrait" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 3 - Landscape Portrait</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `3-landscape-portrait.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>landscape-portrait</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>3-landscape-portrait!</h1>
+
+  <h3>Write a function which checks given width and height, returns true (landscape) if width is greater than height and vice versa</h3>
+  
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('3-landscape-portrait');
+
+function isLandscape(width, height){
+  // 3. ternary short syntax
+  return (width > height);
+}
+
+let checkWidthHeight1 = isLandscape(800, 600);
+console.log('Landscape:',checkWidthHeight1);
+
+let checkWidthHeight2 = isLandscape(600, 800);
+console.log('Landscape:',checkWidthHeight2);
+
+let checkWidthHeight3 = isLandscape(1024, 768);
+console.log('Landscape:',checkWidthHeight3);
 
 ```
