@@ -30,3 +30,7 @@ JavaScript exercise/examples for Beginners
 - JavaScript can't talk to a Database (Its possible with NodeJs)
 - JavaScript can't write to files (Its possible with NodeJs)
 - Keep track of state (except with cookies)
+
+Topics include
+=====================
+1. [Example 1 - swapping variables](#example-1-swapping-variables)
