@@ -38,6 +38,7 @@ Topics include
 3. [Example 3 - Landscape Portrait](#example-3-landscape-portrait)
 4. [Example 4 - FizzBuzz Algorithms](#example-4-fizzbuzz-algorithms)
 5. [Example 5 - Speed Limits](#example-5-speed-limits)
+6. [Example 6 - Odd Even Number Loop](#example-6-odd-even-number-loop)
 
 Example 1 swapping variables
 =====================
@@ -436,5 +437,62 @@ console.log(checkPoin4);
 
 let checkPoin5 = checkSpeedLimit(120);
 console.log(checkPoin5);
+
+```
+
+Example 6 Odd Even Number Loop
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/6-odd-even-number-loop.png" alt="Odd Even Number Loop" title="Odd Even Number Loop" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 6 - Odd Even Number Loop</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `6-odd-even-number-loop.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>odd-even-number-loop</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>6-odd-even-number-loop!</h1>
+
+  <h3>Write a function which checks number till given input/parameter is odd or even</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('6-odd-even-number-loop');
+
+function isOddEvenNumber(curLimit) {
+  for(let i = 0; i <= curLimit; i++) {
+    /* if (i % 2 === 0) {
+      console.log(i , 'EVEN');
+    } else {
+      console.log(i , 'ODD');
+    } */
+
+    const alertMessage = (i % 2 === 0) ? 'EVEN' : 'ODD';
+    console.log(i , alertMessage);
+  }
+}
+
+isOddEvenNumber(10);
+// isOddEvenNumber(17);
 
 ```
