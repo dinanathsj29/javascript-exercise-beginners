@@ -503,8 +503,8 @@ Example 7 Count Truthy Falsy Values
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/7-count-truthy-falsy-values.png" alt="?Count Truthy Falsy Values" title="Count Truthy Falsy Values?" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image 7 - Count Truthy Falsy Values?</figcaption>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/7-count-truthy-falsy-values.png" alt="Count Truthy Falsy Values" title="Count Truthy Falsy Values" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 7 - Count Truthy Falsy Values</figcaption>
   </figure>
 </p>
 
