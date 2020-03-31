@@ -37,6 +37,7 @@ Topics include
 2. [Example 2 - max number](#example-2-max-number)
 3. [Example 3 - Landscape Portrait](#example-3-landscape-portrait)
 4. [Example 4 - FizzBuzz Algorithms](#example-4-fizzbuzz-algorithms)
+5. [Example 5 - Speed Limits](#example-5-speed-limits)
 
 Example 1 swapping variables
 =====================
@@ -347,5 +348,93 @@ console.log(checkFizzBuzz5);
 
 let checkFizzBuzz6 = isfizzBuzz(11);
 console.log(checkFizzBuzz6);
+
+```
+
+Example 5 Speed Limits
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/5-speed-limits.png" alt="Speed Limits" title="Speed Limits" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 5 - Speed Limits</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `5-speed-limits.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>speed-limits</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>5-speed-limits!</h1>
+
+  <h3>Write a function which checks given input/parameter:</h3>
+  
+  <ul>
+    <li>If input/parameter is below speedlimit of 70 print => 'Good Safe Driving'</li>
+    <li>If input/parameter is above speedlimit of 70, every 5 kilometers is Penalty Point, print => 'Speed Limit Crossed by Penalty Point' + Point </li>
+    <li>If Driver gets more than 10 penalty points ie. above the speed limit 120, print => 'License Suspended'</li>
+  </ul>
+  
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('5-speed-limits');
+
+/* 
+<h3>Write a function which checks given input/parameter:</h3>
+  
+<ul>
+  <li>If input/parameter is below speedlimit of 70 print => 'Good Safe Driving'</li>
+  <li>If input/parameter is above speedlimit of 70, every 5 kilometers is Penalty Point, print => 'Speed Limit Crossed by Penalty Point' + Point </li>
+  <li>If Driver gets more than 10 penalty points ie. above the speed limit 120, print => 'License Suspended'</li>
+</ul>
+*/
+
+const SPEEDLIMIT = 70;
+const KMPERPOINT = 5;
+
+function checkSpeedLimit(curSpeed) {
+  if (curSpeed <= SPEEDLIMIT) {
+    return ('Good Safe Driving!');
+  } else {
+    let penaltyPoint = Math.floor((curSpeed - SPEEDLIMIT) / KMPERPOINT);
+    if (penaltyPoint < 10) {
+      return ('Speed Limit Crossed by Penalty Point: ' + penaltyPoint);
+    } else {
+      return ('License Suspended!');
+    }
+  }
+}
+
+let checkPoin1 = checkSpeedLimit(40);
+console.log(checkPoin1);
+
+let checkPoin2 = checkSpeedLimit(70);
+console.log(checkPoin2);
+
+let checkPoin3 = checkSpeedLimit(75);
+console.log(checkPoin3);
+
+let checkPoin4 = checkSpeedLimit(99);
+console.log(checkPoin4);
+
+let checkPoin5 = checkSpeedLimit(120);
+console.log(checkPoin5);
 
 ```
