@@ -39,6 +39,7 @@ Topics include
 4. [Example 4 - FizzBuzz Algorithms](#example-4-fizzbuzz-algorithms)
 5. [Example 5 - Speed Limits](#example-5-speed-limits)
 6. [Example 6 - Odd Even Number Loop](#example-6-odd-even-number-loop)
+7. [Example 7 - Count Truthy Falsy Values](#example-7-count-truthy-falsy-values)
 
 Example 1 swapping variables
 =====================
@@ -494,5 +495,86 @@ function isOddEvenNumber(curLimit) {
 
 isOddEvenNumber(10);
 // isOddEvenNumber(17);
+
+```
+
+Example 7 Count Truthy Falsy Values
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/7-count-truthy-falsy-values.png" alt="?Count Truthy Falsy Values" title="Count Truthy Falsy Values?" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 7 - Count Truthy Falsy Values?</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `7-count-truthy-falsy-values.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>count-truthy-falsy-values.html</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>7-count-truthy-falsy-values!</h1>
+
+  <h3>Write a function which checks and count the truthy values from an array</h3>
+
+  Falsy values in JavaScript are:
+  <ul>
+    <li>false</li>
+    <li>0 (zero)</li>
+    <li>undefined</li>
+    <li>null</li>
+    <li>''</li>
+    <li>NaN</li>
+  </ul>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('7-count-truthy-falsy-values');
+
+/*
+<h3>Write a function which checks and count the truthy values from an array</h3>
+
+Falsy values in JavaScript are:
+<ul>
+  <li>false</li>
+  <li>0 (zero)</li>
+  <li>undefined</li>
+  <li>null</li>
+  <li>''</li>
+  <li>NaN</li>
+</ul>
+*/
+
+const valuesArray = [0, 1, '', undefined, false, true];
+
+function checkCountTruthyFalsy(curArray) {
+  let truthyCount = 0;
+  
+  for (let value of curArray) {
+    // no need to check if(value !== false || value !== 0 || value !== '' or ...)
+    if (value) {
+      truthyCount++;
+    }
+  }
+  return truthyCount;
+}
+
+console.log(checkCountTruthyFalsy(valuesArray));
 
 ```
