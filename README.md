@@ -40,6 +40,9 @@ Topics include
 5. [Example 5 - Speed Limits](#example-5-speed-limits)
 6. [Example 6 - Odd Even Number Loop](#example-6-odd-even-number-loop)
 7. [Example 7 - Count Truthy Falsy Values](#example-7-count-truthy-falsy-values)
+8. [Example 8 - Object String Properties Key](#example-8-object-string-properties-key)
+9. [Example 9 - Sum of Multiples](#example-9-sum-of-multiples)
+10. [Example 10 - Netsted Loop Star Pattern](#example-10-netsted-loop-star-pattern)
 
 Example 1 swapping variables
 =====================
@@ -576,5 +579,187 @@ function checkCountTruthyFalsy(curArray) {
 }
 
 console.log(checkCountTruthyFalsy(valuesArray));
+
+```
+
+Example 8 Object String Properties Key
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/8-object-string-properties-key.png" alt="Object String Properties Key" title="Object String Properties Key" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 8 - Object String Properties Key</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `8-object-string-properties-key.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-string-properties-key</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>8-object-string-properties-key!</h1>
+
+  <h3>Write a function which checks and prints only the string type properties of an object</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('8-object-string-properties-key');
+
+function showStringProperties(curObj) {
+  for(let key in curObj) {
+    // console.log('key/prop:', key);
+    if(typeof(curObj[key]) === 'string') {
+      console.log(key,':', curObj[key]);
+    }
+  }
+}
+
+const Person = {
+  name: 'Dinanath',
+  age: 40,
+  height: 5.6,
+  country: 'India',
+  designation: 'UI Developer'
+}
+
+showStringProperties(Person);
+console.log('----------');
+
+const Technology = {
+  name: 'JavaScipt',
+  version: 6,
+  purpose: 'Scripting language for Web',
+  developer: 'Netscape Corporation'
+}
+
+showStringProperties(Technology);
+console.log('----------');
+
+```
+
+Example 9 Sum of Multiples
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/9-sum-of-multiples.png" alt="Sum of Multiples" title="Sum of Multiples" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 9 - Sum of Multiples</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `9-sum-of-multiples.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sum-of-multiples</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>9-sum-of-multiples!</h1>
+
+  <h3>Write a function which Calculate the sum of multiples of 3 and 5 for a given limit</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('9-sum-of-multiples');
+
+function sumOfMultiples(curLimit) {
+
+  let sumOfMultipleValue = 0;
+
+  for(let i = 0; i <= curLimit; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      // console.log(i);
+      sumOfMultipleValue +=i;
+    }
+  }
+  // return sumOfMultipleValue;
+  console.log(`sumOfMultipleValue of 3 & 5 upto ${curLimit} digit is:`, sumOfMultipleValue);
+}
+
+sumOfMultiples(10);
+
+```
+
+Example 10 Netsted Loop Star Pattern
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/10-netsted-loop-star-pattern.png" alt="Netsted Loop Star Pattern" title="Netsted Loop Star Pattern" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 10 - Netsted Loop Star Pattern</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `10-netsted-loop-star-pattern.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-netsted-loop-star-pattern</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>10-netsted-loop-star-pattern!</h1>
+
+  <h3>Write a function which Prints/Shows star-aestrikes (or any pattern) for the number of times and rows provided</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('10-netsted-loop-star-pattern');
+
+function showPattern(totalRowsPatternCount) {
+  for (let curRow = 1; curRow <= totalRowsPatternCount; curRow++) {
+    // console.log(curRow);
+    let patternDesign = '';
+    for (let i = 0; i < curRow; i++) {
+      patternDesign += '*'
+    }
+    console.log(patternDesign);
+  }
+}
+
+showPattern(5);
 
 ```
