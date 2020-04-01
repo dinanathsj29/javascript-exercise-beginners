@@ -43,6 +43,7 @@ Topics include
 8. [Example 8 - Object String Properties Key](#example-8-object-string-properties-key)
 9. [Example 9 - Sum of Multiples](#example-9-sum-of-multiples)
 10. [Example 10 - Netsted Loop Star Pattern](#example-10-netsted-loop-star-pattern)
+11. [Example 11 - Marks Average Grade](#example-11-marks-average-grade)
 
 Example 1 swapping variables
 =====================
@@ -761,5 +762,105 @@ function showPattern(totalRowsPatternCount) {
 }
 
 showPattern(5);
+
+```
+
+Example 11 Marks Average Grade
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/11-marks-average-grade.png" alt="Marks Average Grade" title="Marks Average Grade" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 11 - Marks Average Grade</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `11-marks-average-grade.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>marks-average-grade</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>11-marks-average-grade!</h1>
+
+  <h3>Write a function which Calculate the sum of marks provided in an array, average it and also show Grade</h3>
+
+  Grade criteria/mechanism is:
+  <ul>
+    <li>0% to 70% => D Grade</li>
+    <li>71% to 79% => C Grade</li>
+    <li>81% to 89% => B Grade</li>
+    <li>91% to 100% => A Grade</li>
+  </ul>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('11-marks-average-grade');
+
+// approach 1
+
+/* const MARKSARRAY = [55, 85, 55, 65];
+
+function calculateAverageGrade(currentMarks) {
+  let totalMarks = 0;
+  let averageMarks = 0;
+  let grade;
+
+  for(let mark of currentMarks) {
+    totalMarks += mark;
+  }
+  // console.log('totalMarks:', totalMarks);
+  averageMarks = (totalMarks/currentMarks.length);
+  // console.log('averageMarks:', averageMarks);
+
+  if(averageMarks < 70) return grade = 'D'; 
+  if(averageMarks < 80) return grade = 'C';
+  if(averageMarks < 90) return grade = 'B';
+  if(averageMarks <= 100) return grade = 'A';
+}
+
+console.log('Grade:', calculateAverageGrade(MARKSARRAY)); */
+
+// approach 2 - create two different functions with single responsibility principle
+
+const MARKSARRAY = [55, 85, 55, 65];
+
+function calculateAverage(currentArray) {
+  let total = 0;
+  for (let curValue of currentArray) {
+    total += curValue;
+  }
+  // console.log('total:', total);
+  return (total/currentArray.length);
+}
+
+// console.log(calculateAverage(MARKSARRAY));
+
+function calculateGrades(_currentArray) { 
+  const average = calculateAverage(_currentArray);
+  // console.log('average:', average);
+
+  if(average < 70) return grade = 'D'; 
+  if(average < 80) return grade = 'C';
+  if(average < 90) return grade = 'B';
+  if(average <= 100) return grade = 'A';
+}
+
+console.log('Grade:',calculateGrades(MARKSARRAY));
 
 ```
