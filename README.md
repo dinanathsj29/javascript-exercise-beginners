@@ -44,6 +44,8 @@ Topics include
 9. [Example 9 - Sum of Multiples](#example-9-sum-of-multiples)
 10. [Example 10 - Netsted Loop Star Pattern](#example-10-netsted-loop-star-pattern)
 11. [Example 11 - Marks Average Grade](#example-11-marks-average-grade)
+12. [Example 12 - Random Bingo Card](#example-12-random-bingo-card)
+13. [Example 13 - Show Prime Numbers](#example-13-show-prime-numbers)
 
 Example 1 swapping variables
 =====================
@@ -862,5 +864,204 @@ function calculateGrades(_currentArray) {
 }
 
 console.log('Grade:',calculateGrades(MARKSARRAY));
+
+```
+
+Example 12 Random Bingo Card
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/12-random-bingo-card.png" alt="Random Bingo Card" title="Random Bingo Card" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 12 - Random Bingo Card</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `12-random-bingo-card.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random-bingo-card</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>12-random-bingo-card!</h1>
+  
+  <h3>Write a function to create a Bingo Card with Random numbers upto 75</h3>
+  <table>
+    <thead>
+      <tr>
+        <th class="heading">B</th>
+        <th class="heading">I</th>
+        <th class="heading">N</th>
+        <th class="heading">G</th>
+        <th class="heading">O</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr> 
+        <td id="Square1">&nbsp;</td>
+        <td id="Square2">&nbsp;</td>
+        <td id="Square3">&nbsp;</td>
+        <td id="Square4">&nbsp;</td>
+        <td id="Square5">&nbsp;</td>
+      </tr>
+      <tr>
+        <td id="Square6">&nbsp;</td>
+        <td id="Square7">&nbsp;</td>
+        <td id="Square8">&nbsp;</td>
+        <td id="Square9">&nbsp;</td>
+        <td id="Square10">&nbsp;</td>
+      </tr>
+      <tr>
+        <td id="Square11">&nbsp;</td>
+        <td id="Square12">&nbsp;</td>
+        <td id="freeSquare">Free</td>
+        <td id="Square13">&nbsp;</td>
+        <td id="Square14">&nbsp;</td>
+      </tr>
+      <tr>
+        <td id="Square15">&nbsp;</td>
+        <td id="Square16">&nbsp;</td>
+        <td id="Square17">&nbsp;</td>
+        <td id="Square18">&nbsp;</td>
+        <td id="Square19">&nbsp;</td>
+      </tr>
+      <tr>
+        <td id="Square20">&nbsp;</td>
+        <td id="Square21">&nbsp;</td>
+        <td id="Square22">&nbsp;</td>
+        <td id="Square23">&nbsp;</td>
+        <td id="Square24">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3><a href="">Click here</a> (Reload/Refresh) to create Random Bingo Card!</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('12-random-bingo-card');
+
+window.onload = createBingoCard;
+
+function createBingoCard() {
+  // console.log('in createBingoCard');
+
+  for (var i = 1; i <= 24; i++) {
+    var newRandomNum = Math.floor(Math.random() * 75);
+    // console.log('newRandomNum', newRandomNum);
+    document.getElementById('Square' + i).innerHTML = newRandomNum;
+  }
+}
+
+```
+
+Example 13 Show Prime Numbers
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/13-show-prime-numbers.png" alt="Show Prime Numbers" title="Show Prime Numbers" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 13 - Show Prime Numbers</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `13-show-prime-numbers.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>show-prime-numbers</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>13-show-prime-numbers!</h1>
+
+  <h3>Write a function which show or print Prime Number upto provided range</h3>
+
+  <ul>
+    <li>Prime Numbers are those numbers whose factors are only `1` and `the number itself`</li>
+    <li>In simple language Prime Numbers are divisible by only `1` and `the number itself/himself`</li>
+    <li>Prime Numbers have only two factors: `1` and `the number itself/himself`</li>
+    <li>Example: 2, 3, 5, 7, 11, 13, 17, 19 and so on...</li>
+  </ul>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('13-show-prime-numbers');
+
+// approach 1
+
+/* function showPrimeNumbers(numberLimit) {
+  for (let curNum = 2; curNum <= numberLimit; curNum++) {
+    // console.log('curNum', curNum);
+
+    let isPrime = true;
+    for (let factor = 2; factor < curNum; factor++) {
+      // console.log('factor', factor);
+      if (curNum % factor === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      console.log('Prime Number', curNum);
+      
+    }
+  }
+} 
+
+showPrimeNumbers(20);*/
+
+// approach 2
+
+function showPrimeNumbers(numberLimit) {
+  for (let curNum = 2; curNum <= numberLimit; curNum++) {
+    // console.log('curNum', curNum);
+    if (isPrimeNumber(curNum)) {
+      console.log('Prime Number:', curNum);
+    }
+  }
+}
+
+function isPrimeNumber(_number) {
+  for (let factor = 2; factor < _number; factor++) {
+    // console.log('factor', factor);
+    if (_number % factor === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+showPrimeNumbers(20);
 
 ```
