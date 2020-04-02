@@ -49,6 +49,9 @@ Topics include
 14. [Example 14 - Sum Of Arguments](#example-14-sum-of-arguments)
 15. [Example 15 - Sum Of Arguments Array](#example-15-sum-of-arguments-array)
 16. [Example 16 - Circle Area Object Read Only Property](#example-16-circle-area-object-read-only-property)
+17. [Example 17 - Create Array From Argument Range](#example-17-create-array-from-argument-range)
+18. [Example 18 - Array Includes Element Exists](#example-18-array-includes-element-exists)
+19. [Example 19 - Array Excludes Value To New Array](#example-19-array-excludes-value-to-new-array)
 
 Example 1 swapping variables
 =====================
@@ -1226,3 +1229,182 @@ const CIRCLE = {
 console.log('CIRCLE.area:', CIRCLE.area);
 
 ```
+
+Example 17 Create Array From Argument Range
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/17-create-array-from-argument-range.png" alt="Create Array From Argument Range" title="Create Array From Argument Range" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 17 - Create Array From Argument Range</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `17-create-array-from-argument-range.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create-array-from-argument-range</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>17-create-array-from-argument-range!</h1>
+
+  <h3>Create an array of the values from the 'min' and 'max' (start & end) range provided</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('17-create-array-from-argument-range');
+
+function generateArrayFromRange(startNum, endNum) {
+  const rangeArray = [];
+  for(let curNum = startNum; curNum <= endNum; curNum++) {
+    // console.log('curNum: ', curNum);
+    rangeArray.push(curNum);
+    // console.log('rangeArray: ', rangeArray);
+  }
+  return rangeArray;
+}
+
+const range1 = generateArrayFromRange(1, 5);
+console.log(range1);
+console.log('----------');
+const range2 = generateArrayFromRange(-5, 0);
+console.log(range2);
+
+```
+
+Example 18 Array Includes Element Exists
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/18-array-includes-element-exists.png" alt="Array Includes Element Exists" title="Array Includes Element Exists" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 18 - Array Includes Element Exists</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `18-array-includes-element-exists.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array-includes-element-exists</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>18-array-includes-element-exists!</h1>
+
+  <h3>Create a method named 'includes' which checks an element exists in an array</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('18-array-includes-element-exists');
+
+function includes(arrayToSearch, elementToSearch) {
+  console.log('arrayToSearch: ', arrayToSearch);
+  console.log('elementToSearch: ', elementToSearch);
+  for(let curElement of arrayToSearch) {
+    if(curElement === elementToSearch) {
+      return true;
+    } 
+  }
+  return false;
+}
+
+const versionArray = [1, 2, 5, 7, 2];
+console.log(includes(versionArray, 2));
+console.log('---------');
+const ageArray = [21, 22, 25, 27, 25];
+console.log(includes(ageArray, 30));
+
+```
+
+Example 19 Array Excludes Value To New Array
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/19-array-excludes-value-to-new-array.png" alt="Array Excludes Value To New Array" title="Array Excludes Value To New Array" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 19 - Array Excludes Value To New Array</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `19-array-excludes-value-to-new-array.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array-excludes-value-to-new-array</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>19-array-excludes-value-to-new-array!</h1>
+
+  <h3>Create a method named 'excludes' which cut/excludes values from existing array and push to new array</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('19-array-excludes-value-to-new-array');
+
+function excludes(arrayToExclude, elementsToExcluded) {
+  console.log('arrayToExclude: ', arrayToExclude);
+  console.log('elementsToExcluded: ', elementsToExcluded);
+  const outputArray = [];
+  for(let curElement of arrayToExclude) {
+    if(!elementsToExcluded.includes(curElement)) {
+      outputArray.push(curElement)
+    }
+  }
+  return outputArray;
+}
+
+const versionArray = [1, 2, 5, 7, 2];
+const newVesionArray = (excludes(versionArray, [2]));
+console.log('newVesionArray: ', newVesionArray);
+
+console.log('---------');
+
+const ageArray = [21, 25, 22, 25, 30, 25, 30];
+const newAgeArray = (excludes(ageArray, [25,30]));
+console.log('newAgeArray: ', newAgeArray);
+
+```
+
