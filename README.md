@@ -46,6 +46,9 @@ Topics include
 11. [Example 11 - Marks Average Grade](#example-11-marks-average-grade)
 12. [Example 12 - Random Bingo Card](#example-12-random-bingo-card)
 13. [Example 13 - Show Prime Numbers](#example-13-show-prime-numbers)
+14. [Example 14 - Sum Of Arguments](#example-14-sum-of-arguments)
+15. [Example 15 - Sum Of Arguments Array](#example-15-sum-of-arguments-array)
+16. [Example 16 - Circle Area Object Read Only Property](#example-16-circle-area-object-read-only-property)
 
 Example 1 swapping variables
 =====================
@@ -1063,5 +1066,163 @@ function isPrimeNumber(_number) {
 }
 
 showPrimeNumbers(20);
+
+```
+
+Example 14 Sum Of Arguments
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/14-sum-of-arguments.png" alt="Sum Of Arguments" title="Sum Of Arguments" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 14 - Sum Of Arguments</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `14-sum-of-arguments.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sum-of-arguments</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>14-sum-of-arguments!</h1>
+
+  <h3>Write a function which show or print Sum of Arguments passed</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('14-sum-of-arguments');
+
+function sumOfArguments(...items){
+  // rest operator converts anything passed as an array
+  console.log('current items/values to add:', items);
+  return items.reduce((n1, n2) => n1 +n2);
+}
+
+console.log('Sum:', sumOfArguments(10, 2, 8, 4, 6));
+// console.log('Sum:', sumOfArguments([10, 2, 8, 4, 6]));
+
+```
+
+Example 15 Sum Of Arguments Array
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/15-sum-of-arguments-array.png" alt="Sum Of Arguments Array" title="Sum Of Arguments Array" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 15 - Sum Of Arguments Array</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `15-sum-of-arguments-array.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sum-of-arguments-array</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>15-sum-of-arguments-array!</h1>
+
+  <h3>Write a function which show or print Sum of Arguments passed as an Array</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('15-sum-of-arguments-array');
+
+function sumOfArguments(...items){
+  // as rest operator converts anything passed as an array check following
+  if(items.length === 1 && Array.isArray(items[0])) {
+    // reset item as a new array 
+    items = [...items[0]]
+    console.log('current items/values to add:', items);
+    return items.reduce((n1, n2) => n1 +n2);
+  }
+}
+
+// pass arguments as an array
+// console.log('Sum:', sumOfArguments([10, 2, 8, 4, 6]));
+console.log('Sum:', sumOfArguments([10, 2, 8, 4, 6]));
+
+```
+
+Example 16 Circle Area Object Read Only Property
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/16-circle-area-object-read-only-property.png" alt="Circle Area Object Read Only Property" title="Circle Area Object Read Only Property" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 16 - Circle Area Object Read Only Property</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `16-circle-area-object-read-only-property.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>circle-area-object-read-only-property</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>16-circle-area-object-read-only-property!</h1>
+
+  <h3>Create an object with read only propety named 'area'</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('16-circle-area-object-read-only-property');
+
+const CIRCLE = {
+  name: 'mainCircle',
+  lineColor: 'red',
+  bgColor: 'gray',
+  radius: 1,
+  get area() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+console.log('CIRCLE.area:', CIRCLE.area);
 
 ```
