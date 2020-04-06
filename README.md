@@ -52,6 +52,12 @@ Topics include
 17. [Example 17 - Create Array From Argument Range](#example-17-create-array-from-argument-range)
 18. [Example 18 - Array Includes Element Exists](#example-18-array-includes-element-exists)
 19. [Example 19 - Array Excludes Value To New Array](#example-19-array-excludes-value-to-new-array)
+20. [Example 20 - Array Count Search Occurances](#example-20-array-count-search-occurances)
+21. [Example 21 Array Get Max Largest Number](#example-21-array-get-max-largest-number)
+22. [Example 22 - Array Filter Sort Map](#example-22-array-filter-sort-map)
+23. [Example 23 - Object Create Students and Address Object](#example-23-object-create-students-and-address-object)
+24. [Example 24 - Object Create Object Factory Constructor Function](#example-24-object-create-object-factory-constructor-function)
+25. [Example 25 - Object Equality](#example-25-object-equality)
 
 Example 1 swapping variables
 =====================
@@ -1408,3 +1414,450 @@ console.log('newAgeArray: ', newAgeArray);
 
 ```
 
+Example 20 Array Count Search Occurances
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/20-01-array-count-search-occurances.png" alt="Array Count Search Occurances" title="Array Count Search Occurances" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 20-01 - Array Count Search Occurances</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `array-count-search-occurances.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array-count-search-occurances</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body> 
+  
+  <h1>20-array-count-search-occurances!</h1>
+
+  <h3>Create a function which counts the search occurances from an array</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('20-array-count-search-occurances');
+
+// approach 1
+/* function countSearchOccurances(arrayToSearch, elementsToSearch) {
+  // console.log('arrayToSearch: ', arrayToSearch);
+  // console.log('elementsToSearch: ', elementsToSearch);
+  let count = 0;
+  for(let curElement of arrayToSearch) {
+    if(curElement === elementsToSearch) {
+      count++;
+    }
+  }
+  // console.log('search count:', count);
+  return count;
+} */
+
+// approach 2 
+function countSearchOccurances(arrayToSearch, elementsToSearch) {
+
+  return arrayToSearch.reduce((countAccumulator, curentSearchElement) => {
+    let countOccurances = (curentSearchElement === elementsToSearch) ? 1 : 0;
+    // console.log('countAccumulator', countAccumulator, 'arrayToSearch', arrayToSearch, 'elementsToSearch', elementsToSearch,);
+    return countAccumulator + countOccurances;
+  },0)
+}
+
+const versionArray = [1, 2, 5, 7, 2];
+const versionCount = (countSearchOccurances(versionArray, 2));
+console.log('versionCount: ', versionCount);
+
+console.log('---------');
+
+const ageArray = [21, 25, 22, 25, 30, 25, 30];
+const ageCount = (countSearchOccurances(ageArray, -25));
+console.log('ageCount: ', ageCount);
+
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/20-02-array-count-search-occurances.png" alt="Array Count Search Occurances" title="Array Count Search Occurances" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 20-02 - Array Count Search Occurances</figcaption>
+  </figure>
+</p>
+
+Example 21 Array Get Max Largest Number
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/21-array-get-max-largest-number.png" alt="Array Get Max Largest Number" title="Array Get Max Largest Number" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 21 - Array Get Max Largest Number</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `21-array-get-max-largest-number.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array-get-max-largest-number</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+
+  <h1>21-array-get-max-largest-number!</h1>
+
+  <h3>Create a function which returns the maximum ie. largest number from an array</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('21-array-get-max-largest-number');
+
+// approach 1
+/* 
+function getLargestNumber(arrayToSearch) {
+  if (arrayToSearch.length <= 0) return 'Array is Empty! Nothing to search!!';
+  let largetNumber = arrayToSearch[0];
+
+  for (let i = 1; i < arrayToSearch.length; i++) {
+    if (arrayToSearch[i] > largetNumber) {
+      largetNumber = arrayToSearch[i];
+    }
+  }
+  return largetNumber;
+} 
+
+const versionArray = [5, 2, 3, 4, 7];
+const largestVersion = (getLargestNumber(versionArray));
+console.log('largestVersion: ', largestVersion);
+
+console.log('---------');
+
+const ageArray = [21, 25, 22, 25, 30, 25, 30];
+const maxAge = (getLargestNumber(ageArray));
+console.log('maxAge: ', maxAge); */
+
+// approach 2 
+
+function getLargestNumber(arrayToSearch) {
+  if (arrayToSearch.length <= 0) return 'Array is Empty! Nothing to search!!';
+
+  return arrayToSearch.reduce((largetNumber, curentSearchElement) => {
+    return (curentSearchElement > largetNumber) ? curentSearchElement : largetNumber;
+  })
+}
+
+const versionArray = [5, 2, 3, 4, 7];
+const largestVersion = (getLargestNumber(versionArray));
+console.log('largestVersion: ', largestVersion);
+
+console.log('---------');
+
+const ageArray = [21, 25, 22, 25, 30, 25, 30];
+const maxAge = (getLargestNumber(ageArray));
+console.log('maxAge: ', maxAge);
+
+```
+
+Example 22 Array Filter Sort Map
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/22-array-filter-sort-map.png" alt="Array Filter Sort Map" title="Array Filter Sort Map" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 22 - Array Filter Sort Map</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `22-array-filter-sort-map.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array-filter-sort-map</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+
+  <h1>22-array-filter-sort-map!</h1>
+
+  <h3>Array: Filter the array of students with Higest Ranking, Sort on Ranking, finally Show the Names </h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('22-array-filter-sort-map');
+
+const studentsArray = [
+  { name: 'Suraj', year: 2019, ranking: 4 },
+  { name: 'Amit', year: 2019, ranking: 5 },
+  { name: 'Akash', year: 2018, ranking: 4 },
+  { name: 'Dinanath', year: 2019, ranking: 7 },
+  { name: 'Sagar', year: 2017, ranking: 3 },
+]
+
+console.log('Higest Rank Holders:',
+  studentsArray
+    .filter(student => student.year === 2019 && student.ranking >= 5)
+    .sort((n1, n2) => n1.ranking - n2.ranking)
+    .reverse()
+    .map(student => student.name)
+);
+
+```
+
+Example 23 Object Create Students and Address Object
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/23-object-create-students-and-address-object.png" alt="Object Create Students and Address Object" title="Object Create Students and Address Object" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 23 - Object Create Students and Address Object</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `23-object-create-students-and-address-object.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-create-students-and-address-object</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+
+  <h1>23-object-create-students-and-address-object!</h1>
+
+  <h3>Create an Object for Students and Address with various Properties and Methods </h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('23-object-create-students-and-address-object');
+
+const Students = {
+  name: 'Dinanath',
+  age: 35,
+  rank: 5,
+  country: 'India',
+}
+
+const Address = {
+  street: 'Sir DJ Road',
+  city: 'Mumbai',
+  pinCode: 401209,
+  state: 'MH',
+  country: 'India',
+}
+
+function showObjectDetails(obj) {
+  for(let key in obj) {
+    console.log(key,' : ',obj[key]);
+  }
+}
+
+showObjectDetails(Students);
+console.log('----------');
+showObjectDetails(Address);
+
+```
+
+Example 24 Object Create Object Factory Constructor Function
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/24-object-create-object-factory-constructor-function.png" alt="Object Create Object Factory Constructor Function" title="Object Create Object Factory Constructor Function" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 24 - Object Create Object Factory Constructor Function</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `24-object-create-object-factory-constructor-function.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-create-object-factory-constructor-function</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+
+  <h1>24-object-create-object-factory-constructor-function!</h1>
+
+  <h3>Create an Object of Students by using Factory and Constructor methods</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('24-object-create-object-factory-constructor-function');
+
+// Factory function/method - camelCasing - camel notation - use return keyword
+function createObjFactoryMethod(name, age, rank, country) {
+  return {
+    name, age, rank, country
+  }
+}
+
+let Students1 = createObjFactoryMethod('Dinanath', 35, 5, 'India');
+console.log('Students1', Students1);
+
+// Constructor function/method - pascalCasing - pascal notation - use this keyword
+function Student(name, age, rank, country) {
+  this.name = name;
+  this.age = age;
+  this.rank = rank;
+  this.country = country;
+}
+
+let Students2 = new Student('Amit', 30, 4, 'Hindustan');
+console.log('Students2', Students2);
+
+```
+
+Example 25 Object Equality
+=====================
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-javascript-exercise-beginners/25-object-equality.png" alt="Object Equality" title="Object Equality" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 25 - Object Equality</figcaption>
+  </figure>
+</p>
+
+> **Syntax & Example**: `25-object-equality.html`
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-equality</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+
+  <h1>25-object-equality!</h1>
+
+  <h3>Write function to check object equality</h3>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
+
+```
+
+> **Syntax & Example**: `script.js`
+```js
+
+console.log('25-object-equality');
+
+// Constructor function/method - pascalCasing - pascal notation - use this keyword
+function Student(name, age, rank, country) {
+  this.name = name;
+  this.age = age;
+  this.rank = rank;
+  this.country = country;
+}
+
+let Students1 = new Student('Dinanath', 35, 5, 'India');
+console.log('Students1', Students1);
+
+let Students2 = new Student('Dinanath', 35, 5, 'India');
+console.log('Students2', Students2);
+
+console.log('----------');
+
+// Objects are reference type, objects can have same properties but they are from different memeory location, they can be equal if both objects have same properties
+function isObjectEqual(obj1, obj2){
+  return obj1.name === obj2.name &&
+         obj1.age === obj2.age &&
+         obj1.rank === obj2.rank &&
+         obj1.country === obj2.country
+}
+
+console.log('isEqual', isObjectEqual(Students1, Students2));
+
+console.log('----------');
+
+// Objects are same if both are pointed to same object
+function isObjectPointSame(obj1, obj2){
+  return obj1 === obj2;
+}
+
+let isSame1 = isObjectPointSame(Students1, Students2);
+console.log('isSame1', isSame1);
+
+let Students3 = Students2;
+let isSame2 = isObjectPointSame(Students2, Students3);
+console.log('isSame2', isSame2);
+
+```
