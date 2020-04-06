@@ -53,7 +53,7 @@ Topics include
 18. [Example 18 - Array Includes Element Exists](#example-18-array-includes-element-exists)
 19. [Example 19 - Array Excludes Value To New Array](#example-19-array-excludes-value-to-new-array)
 20. [Example 20 - Array Count Search Occurances](#example-20-array-count-search-occurances)
-21. [Example 21 Array Get Max Largest Number](#example-21-array-get-max-largest-number)
+21. [Example 21 - Array Get Max Largest Number](#example-21-array-get-max-largest-number)
 22. [Example 22 - Array Filter Sort Map](#example-22-array-filter-sort-map)
 23. [Example 23 - Object Create Students and Address Object](#example-23-object-create-students-and-address-object)
 24. [Example 24 - Object Create Object Factory Constructor Function](#example-24-object-create-object-factory-constructor-function)
@@ -1496,7 +1496,7 @@ console.log('ageCount: ', ageCount);
   </figure>
 </p>
 
-Example 21 Array Get Max Largest Number
+Example 21 - Array Get Max Largest Number
 =====================
 
 <p>
